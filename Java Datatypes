@@ -1,0 +1,33 @@
+import java.util.*;
+public class JavaDatatypes{
+    public static void main(String args[]){
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        for(int i=0;i<n;i++){
+            try{
+                long l=scan.nextLong();
+                if(l<=127 && l>=-128){
+                    System.out.println(l+" can be fitted in:");
+                    System.out.println("* byte");
+                    System.out.println("* short");
+                    System.out.println("* int");
+                    System.out.println("* long");
+                }else if(l<=32767 && l>=-32768){
+                    System.out.println(l+" can be fitted in:");
+                    System.out.println("* short");
+                    System.out.println("* int");
+                    System.out.println("* long");
+                }else if(l<=(Math.pow(2,31))-1 && l>=-(Math.pow(2,31))){
+                    System.out.println(l+" can be fitted in:");
+                    System.out.println("* int");
+                    System.out.println("* long");
+                }else if(l<=(Math.pow(2,63))-1 && l>=-(Math.pow(2,63))){
+                    System.out.println(l+" can be fitted in:");
+                    System.out.println("* long");
+                }
+            }catch(Exception e){
+                System.out.println(scan.next()+" can't be fitted anywhere.");
+            }
+        }
+    }
+}
